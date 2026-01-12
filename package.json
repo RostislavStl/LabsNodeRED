@@ -1,0 +1,12 @@
+{
+    "name": "Project_1",
+    "description": "Мiй перший проект",
+    "version": "0.0.1",
+    "dependencies": {},
+    "node-red": {
+        "settings": {
+            "flowFile": "flows_RStolbkov.json",
+            "credentialsFile": "flows_RStolbkov_cred.json"
+        }
+    }
+}

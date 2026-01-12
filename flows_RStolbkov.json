@@ -1,0 +1,1166 @@
+[
+    {
+        "id": "73f87285ae448480",
+        "type": "tab",
+        "label": "Flow 2",
+        "disabled": true,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "f314ef01b8998f8c",
+        "type": "tab",
+        "label": "Поток 2_6",
+        "disabled": true,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "1fa0c859524a9280",
+        "type": "tab",
+        "label": "Поток 2",
+        "disabled": true,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "3607d46539b3865b",
+        "type": "tab",
+        "label": "MQTT",
+        "disabled": true,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "b12b31bf00c785e9",
+        "type": "tab",
+        "label": "MQTT_SIN",
+        "disabled": true,
+        "info": "task 2.4",
+        "env": []
+    },
+    {
+        "id": "3b721b0f92c452f1",
+        "type": "tab",
+        "label": "MQTT_shortcut",
+        "disabled": true,
+        "info": "task 2.5 (lab 3)",
+        "env": []
+    },
+    {
+        "id": "9a45877c595426f6",
+        "type": "tab",
+        "label": "IPAPI",
+        "disabled": false,
+        "info": "task 4.3 (lab 3)",
+        "env": []
+    },
+    {
+        "id": "32981bf3751d9ceb",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "510a6700e9160d1f",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "466472366030fcec",
+        "type": "ui_group",
+        "name": "Default",
+        "tab": "510a6700e9160d1f",
+        "order": 1,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "ec6fcdb5d241a1df",
+        "type": "debug",
+        "z": "73f87285ae448480",
+        "name": "msg",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 370,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "ffa0bdfdaaaa8016",
+        "type": "inject",
+        "z": "73f87285ae448480",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "Rostislav Stolbkov ",
+        "payloadType": "str",
+        "x": 210,
+        "y": 340,
+        "wires": [
+            [
+                "bbce9ac37e527cfd"
+            ]
+        ]
+    },
+    {
+        "id": "27b6bb72a0612d28",
+        "type": "udp in",
+        "z": "73f87285ae448480",
+        "name": "",
+        "iface": "",
+        "port": "20003",
+        "ipv": "udp4",
+        "multicast": "false",
+        "group": "",
+        "datatype": "utf8",
+        "x": 200,
+        "y": 260,
+        "wires": [
+            [
+                "ec6fcdb5d241a1df"
+            ]
+        ]
+    },
+    {
+        "id": "bbce9ac37e527cfd",
+        "type": "udp out",
+        "z": "73f87285ae448480",
+        "name": "",
+        "addr": "127.0.0.1",
+        "iface": "",
+        "port": "21003",
+        "ipv": "udp4",
+        "outport": "",
+        "base64": false,
+        "multicast": "false",
+        "x": 440,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "4361ab69a1945dc8",
+        "type": "inject",
+        "z": "73f87285ae448480",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "[0,1,2,3,255]",
+        "payloadType": "bin",
+        "x": 170,
+        "y": 400,
+        "wires": [
+            [
+                "8d9b0110808066e9",
+                "bbce9ac37e527cfd"
+            ]
+        ]
+    },
+    {
+        "id": "8d9b0110808066e9",
+        "type": "debug",
+        "z": "73f87285ae448480",
+        "name": "msg",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 490,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "651d9f86fa9979d2",
+        "type": "inject",
+        "z": "73f87285ae448480",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 160,
+        "y": 500,
+        "wires": [
+            [
+                "31d223bea883494c"
+            ]
+        ]
+    },
+    {
+        "id": "31d223bea883494c",
+        "type": "function",
+        "z": "73f87285ae448480",
+        "name": "buffer",
+        "func": "let buf1 = Buffer.from([0,1,2]);\nlet buf2 = Buffer.from([3,4,5]); \nlet buf3 = Buffer.from([6,7]);\nmsg.payload = Buffer.concat([buf1,buf3,buf2],buf1.length + buf2.length + buf3.length);\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 350,
+        "y": 500,
+        "wires": [
+            [
+                "b8fdb7f951a886c1"
+            ]
+        ]
+    },
+    {
+        "id": "b8fdb7f951a886c1",
+        "type": "debug",
+        "z": "73f87285ae448480",
+        "name": "msg",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 510,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "1d54b36805fa7d04",
+        "type": "inject",
+        "z": "73f87285ae448480",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "Hello!",
+        "payloadType": "str",
+        "x": 150,
+        "y": 620,
+        "wires": [
+            [
+                "7f795557ba823236"
+            ]
+        ]
+    },
+    {
+        "id": "7f795557ba823236",
+        "type": "tcp request",
+        "z": "73f87285ae448480",
+        "name": "",
+        "server": "127.0.0.1",
+        "port": "23003",
+        "out": "sit",
+        "ret": "string",
+        "splitc": " ",
+        "newline": "",
+        "trim": false,
+        "tls": "",
+        "x": 320,
+        "y": 620,
+        "wires": [
+            [
+                "6869c4764e322066"
+            ]
+        ]
+    },
+    {
+        "id": "6869c4764e322066",
+        "type": "debug",
+        "z": "73f87285ae448480",
+        "name": "msg",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 510,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "7e6407394a303daa",
+        "type": "tcp in",
+        "z": "73f87285ae448480",
+        "name": "",
+        "server": "server",
+        "host": "127.0.0.1",
+        "port": "20003",
+        "datamode": "stream",
+        "datatype": "utf8",
+        "newline": "",
+        "topic": "",
+        "trim": false,
+        "base64": false,
+        "tls": "",
+        "x": 210,
+        "y": 760,
+        "wires": [
+            [
+                "6d32ba3fdc21b278",
+                "ef9efce4bfbeb74a"
+            ]
+        ]
+    },
+    {
+        "id": "6be6de21bd4479cc",
+        "type": "tcp out",
+        "z": "73f87285ae448480",
+        "name": "",
+        "host": "",
+        "port": "",
+        "beserver": "reply",
+        "base64": false,
+        "end": false,
+        "tls": "",
+        "x": 650,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "6d32ba3fdc21b278",
+        "type": "change",
+        "z": "73f87285ae448480",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "Hello! My name is Rostislav Stolbkov!",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 420,
+        "y": 760,
+        "wires": [
+            [
+                "6be6de21bd4479cc"
+            ]
+        ]
+    },
+    {
+        "id": "ef9efce4bfbeb74a",
+        "type": "debug",
+        "z": "73f87285ae448480",
+        "name": "msg",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 410,
+        "y": 700,
+        "wires": []
+    },
+    {
+        "id": "f26bf8a53d2ebe54",
+        "type": "inject",
+        "z": "f314ef01b8998f8c",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 200,
+        "y": 160,
+        "wires": [
+            [
+                "2b5e948de5678bbe"
+            ]
+        ]
+    },
+    {
+        "id": "f094932f9f8994f7",
+        "type": "debug",
+        "z": "f314ef01b8998f8c",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": true,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 910,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "2b5e948de5678bbe",
+        "type": "file in",
+        "z": "f314ef01b8998f8c",
+        "name": "img",
+        "filename": "C:\\temp\\barcods\\Aztec.png",
+        "filenameType": "str",
+        "format": "",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 250,
+        "y": 220,
+        "wires": [
+            [
+                "d0f382da.60357"
+            ]
+        ]
+    },
+    {
+        "id": "01b92d76803035ae",
+        "type": "http request",
+        "z": "f314ef01b8998f8c",
+        "name": "",
+        "method": "POST",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "https://barcatreader.onrender.com/decode",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 450,
+        "y": 220,
+        "wires": [
+            [
+                "3a71c4faf0edf912"
+            ]
+        ]
+    },
+    {
+        "id": "d0f382da.60357",
+        "type": "function",
+        "z": "f314ef01b8998f8c",
+        "name": "Формувати Запит",
+        "func": "//формування корисного навантаження для POST\n//складається зі статичного тексту з описом розділу\n//та змісту розділу, який є типом image/jpeg що береться з файлу\n//деталі - https://developer.mozilla.org/uk/docs/Web/HTTP/Basics_of_HTTP/MIME_types#multipartform-data \nvar tmp1;//верхня частина - початок розділу\nvar tmp2;//нижня частина - закінчення розділу\ntmp1 = '-----------------------------12818302946532\\r\\n';//межа початку розділу\ntmp1 += 'Content-Disposition: form-data; name=\"file\"; filename=\"1.jpg\"\\r\\n';//заголовок розділу\ntmp1 += 'Content-Type: image/jpeg\\r\\n\\r\\n';//заголовок розділу\ntmp2 = '\\r\\n-----------------------------12818302946532--';//межа кінця розділу\nvar buf1 = Buffer.from(tmp1);//перетворення тексту в бінарний буфер\nvar buf3 = Buffer.from(tmp2);//перетворення тексту в бінарний буфер\nvar ar =[buf1, msg.payload, buf3];//об'єднання буферів та вмісту файлу в один масив\nmsg.payload =  Buffer.concat(ar);//перетворення масиву в один буфер\n\n//формування заголовків запиту\nmsg.headers = {};//об'явили як об'єкт\nmsg.headers[\"host\"] = \"barcatreader.onrender.com\";\nmsg.headers[\"Accept-Encoding\"] = \"identity\";\nmsg.headers[\"accept\"] = \"text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8\";\nmsg.headers[\"content-type\"]= \"multipart/form-data; boundary=---------------------------12818302946532\";\nvar len = msg.payload.length;//визначаємо довжину тіла запиту\nmsg.headers[\"content-length\"] = len.toString();//перетворюємо в текст \nmsg.headers[\"referer\"] = \"https://barcatreader.onrender.com/decode\";\nmsg.headers[\"connection\"] = \"keep-alive\";\nmsg.headers[\"upgrade-insecure-requests\"] = 1;\nreturn msg;//повідомлення для відправки методом POST",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 490,
+        "y": 100,
+        "wires": [
+            [
+                "01b92d76803035ae"
+            ]
+        ]
+    },
+    {
+        "id": "3a71c4faf0edf912",
+        "type": "html",
+        "z": "f314ef01b8998f8c",
+        "name": "",
+        "property": "payload",
+        "outproperty": "payload",
+        "tag": ".result-table td",
+        "ret": "html",
+        "as": "single",
+        "chr": "_",
+        "x": 620,
+        "y": 160,
+        "wires": [
+            [
+                "cc5ccdaf09080428"
+            ]
+        ]
+    },
+    {
+        "id": "cc5ccdaf09080428",
+        "type": "function",
+        "z": "f314ef01b8998f8c",
+        "name": "2ID",
+        "func": "msg.ID = (msg.statusCode==200)? msg.payload[2]:\"error\";\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 790,
+        "y": 100,
+        "wires": [
+            [
+                "f094932f9f8994f7"
+            ]
+        ]
+    },
+    {
+        "id": "e12f7984cc9eacbb",
+        "type": "change",
+        "z": "1fa0c859524a9280",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "$now()",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 270,
+        "y": 400,
+        "wires": [
+            [
+                "71407f127bef4394"
+            ]
+        ]
+    },
+    {
+        "id": "b145a7731dd6f712",
+        "type": "debug",
+        "z": "1fa0c859524a9280",
+        "name": "msg",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 310,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "71407f127bef4394",
+        "type": "template",
+        "z": "1fa0c859524a9280",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "<html>\n    <head></head>\n    <body>\n        <h1>Плинний час: {{payload}}</h1>\n    </body>\n</html>",
+        "output": "str",
+        "x": 300,
+        "y": 520,
+        "wires": [
+            [
+                "bdbc655fde6acd18"
+            ]
+        ]
+    },
+    {
+        "id": "121091c55b421547",
+        "type": "http in",
+        "z": "1fa0c859524a9280",
+        "name": "",
+        "url": "/hello",
+        "method": "get",
+        "upload": false,
+        "skipBodyParsing": false,
+        "swaggerDoc": "",
+        "x": 60,
+        "y": 380,
+        "wires": [
+            [
+                "e12f7984cc9eacbb",
+                "b145a7731dd6f712"
+            ]
+        ]
+    },
+    {
+        "id": "bdbc655fde6acd18",
+        "type": "http response",
+        "z": "1fa0c859524a9280",
+        "name": "",
+        "statusCode": "200",
+        "headers": {},
+        "x": 460,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "a0e49a6fd4414e8d",
+        "type": "mqtt in",
+        "z": "3607d46539b3865b",
+        "name": "",
+        "topic": "NUFT TI4/Variant3/#",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 510,
+        "y": 360,
+        "wires": [
+            [
+                "c70df2880ae9fe61"
+            ]
+        ]
+    },
+    {
+        "id": "c70df2880ae9fe61",
+        "type": "debug",
+        "z": "3607d46539b3865b",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 730,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "619c381435679429",
+        "type": "ui_gauge",
+        "z": "3607d46539b3865b",
+        "name": "",
+        "group": "466472366030fcec",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "gauge",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "80",
+        "seg2": "90",
+        "diff": false,
+        "className": "",
+        "x": 790,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "e9a5fb092d96e6b1",
+        "type": "mqtt in",
+        "z": "3607d46539b3865b",
+        "name": "",
+        "topic": "NUFT TI4/Variant3/Klapan",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 530,
+        "y": 420,
+        "wires": [
+            [
+                "619c381435679429"
+            ]
+        ]
+    },
+    {
+        "id": "d210966f3d2e5508",
+        "type": "ui_slider",
+        "z": "3607d46539b3865b",
+        "name": "",
+        "label": "slider",
+        "tooltip": "",
+        "group": "466472366030fcec",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "end",
+        "topic": "topic",
+        "topicType": "msg",
+        "min": 0,
+        "max": "100",
+        "step": 1,
+        "className": "",
+        "x": 470,
+        "y": 500,
+        "wires": [
+            [
+                "9e913759c6adcdf8"
+            ]
+        ]
+    },
+    {
+        "id": "9e913759c6adcdf8",
+        "type": "mqtt out",
+        "z": "3607d46539b3865b",
+        "name": "",
+        "topic": "NUFT TI4/Variant3/TT101",
+        "qos": "2",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "",
+        "x": 730,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "f1666b024788445e",
+        "type": "inject",
+        "z": "b12b31bf00c785e9",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "5",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 130,
+        "y": 280,
+        "wires": [
+            [
+                "8ee11615e0842b22"
+            ]
+        ]
+    },
+    {
+        "id": "8ee11615e0842b22",
+        "type": "function",
+        "z": "b12b31bf00c785e9",
+        "name": "sin",
+        "func": "\nvar a;\na = msg.payload/10000;\nmsg.payload = (Math.sin (a) +1.0)*25.0+25;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 290,
+        "y": 280,
+        "wires": [
+            [
+                "d1557f2131c54bbe"
+            ]
+        ]
+    },
+    {
+        "id": "c3210adccf63993c",
+        "type": "mqtt out",
+        "z": "b12b31bf00c785e9",
+        "name": "",
+        "topic": "NUFT TI4/Variant3/TT101",
+        "qos": "2",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "",
+        "x": 370,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "d1557f2131c54bbe",
+        "type": "ui_slider",
+        "z": "b12b31bf00c785e9",
+        "name": "",
+        "label": "slider",
+        "tooltip": "",
+        "group": "466472366030fcec",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "end",
+        "topic": "topic",
+        "topicType": "msg",
+        "min": 0,
+        "max": "100",
+        "step": 1,
+        "className": "",
+        "x": 110,
+        "y": 340,
+        "wires": [
+            [
+                "c3210adccf63993c"
+            ]
+        ]
+    },
+    {
+        "id": "aaa2fcd9767e71af",
+        "type": "inject",
+        "z": "3b721b0f92c452f1",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 110,
+        "y": 260,
+        "wires": [
+            [
+                "5c0f82a514eb8823"
+            ]
+        ]
+    },
+    {
+        "id": "5c0f82a514eb8823",
+        "type": "function",
+        "z": "3b721b0f92c452f1",
+        "name": "function",
+        "func": "let rad = context.get (\"rad\") || 0;\nrad = (rad>6.28) ? 0 : rad + 0.1;\nmsg.payload = (Math.sin (rad)+1)/2*100; \ncontext.set (\"rad\", rad);\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 280,
+        "y": 260,
+        "wires": [
+            [
+                "4b4e9cd0e3436f20"
+            ]
+        ]
+    },
+    {
+        "id": "4b4e9cd0e3436f20",
+        "type": "mqtt out",
+        "z": "3b721b0f92c452f1",
+        "name": "",
+        "topic": "RStolbkov/device1/random",
+        "qos": "1",
+        "retain": "true",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "",
+        "x": 280,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "8d3024a3732da9ef",
+        "type": "debug",
+        "z": "3b721b0f92c452f1",
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 640,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "6adab7fd7c33a58c",
+        "type": "mqtt in",
+        "z": "3b721b0f92c452f1",
+        "name": "",
+        "topic": "RStolbkov/#",
+        "qos": "1",
+        "datatype": "auto-detect",
+        "broker": "",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 170,
+        "y": 520,
+        "wires": [
+            [
+                "8d3024a3732da9ef"
+            ]
+        ]
+    },
+    {
+        "id": "55f33f7a68f12cd3",
+        "type": "inject",
+        "z": "9a45877c595426f6",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 320,
+        "y": 340,
+        "wires": [
+            [
+                "5eaa1409299cb9fe"
+            ]
+        ]
+    },
+    {
+        "id": "5eaa1409299cb9fe",
+        "type": "function",
+        "z": "9a45877c595426f6",
+        "name": "function 1",
+        "func": "msg.payload = {\"host\":\"https://api.myip.com\"};\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 500,
+        "y": 320,
+        "wires": [
+            [
+                "dfcf1f6611744d38"
+            ]
+        ]
+    },
+    {
+        "id": "dfcf1f6611744d38",
+        "type": "http request",
+        "z": "9a45877c595426f6",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "http://ip-api.com/json/",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 690,
+        "y": 320,
+        "wires": [
+            [
+                "94483ea7d6f94ddb"
+            ]
+        ]
+    },
+    {
+        "id": "94483ea7d6f94ddb",
+        "type": "debug",
+        "z": "9a45877c595426f6",
+        "name": "debug 3",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 860,
+        "y": 320,
+        "wires": []
+    }
+]
