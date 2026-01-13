@@ -1,6 +1,11 @@
 {
+<<<<<<< HEAD
     "name": "lab6",
     "description": "A Node-RED Project",
+=======
+    "name": "Project_1",
+    "description": "Мiй перший проект",
+>>>>>>> 5885c1b8ec80ba75101c6d74417f042a2ac8063c
     "version": "0.0.1",
     "dependencies": {},
     "node-red": {
