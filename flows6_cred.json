@@ -1,1 +1,6 @@
-{}
+{
+    "c1dd38f2bb0bf8b6": {
+        "user": "root",
+        "password": "mariadb_root"
+    }
+}
