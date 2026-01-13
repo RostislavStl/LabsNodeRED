@@ -3,6 +3,14 @@
         "id": "08ea1054468fa269",
         "type": "tab",
         "label": "Flow 1",
+        "disabled": true,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "7307d663355c3b2c",
+        "type": "tab",
+        "label": "scheduler",
         "disabled": false,
         "info": "",
         "env": []
@@ -789,5 +797,257 @@
                 "0fd1feb5dd055a87"
             ]
         ]
+    },
+    {
+        "id": "0873b405e12e6271",
+        "type": "inject",
+        "z": "7307d663355c3b2c",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 240,
+        "y": 300,
+        "wires": [
+            [
+                "42c7911c5bc9cca2"
+            ]
+        ]
+    },
+    {
+        "id": "42c7911c5bc9cca2",
+        "type": "function",
+        "z": "7307d663355c3b2c",
+        "name": "планувальник",
+        "func": "let now = new Date();\nlet strtday = new Date(now.toDateString());\nlet delta = now.getTime() - strtday.getTime();//кількість мілісекунд з початку доби\nlet scheduler = [];\nscheduler.push({\n    tbegin: delta + 5000, //кількість мілісекунд з початку доби + 5000 мс\n    tend: delta + 10000,\n    topic: \"lamp1\", cmdbegin: \"on\", cmdend: \"off\"\n});\nscheduler.push({\n    tbegin: delta + 6000,\n    tend: delta + 8000,\n    topic: \"lamp2\", cmdbegin: \"on\", cmdend: \"off\"\n});\nscheduler.push({\n    tbegin: delta + 3000,\n    tend: delta + 9000,\n    topic: \"power\", cmdbegin: \"85\", cmdend: \"0\"\n});\n\n//пам'ятайте, що об'єкти передаються за посиланнями а не за значенням\nfunction daytoshed(scheduler) {\n    let strtday = new Date(now.toDateString());\n    for (let schedevt of scheduler) {\n        schedevt.tbegin = new Date(strtday.getTime() + schedevt.tbegin);\n        schedevt.tend = new Date(strtday.getTime() + schedevt.tend);\n    }\n}\ndaytoshed(scheduler);\nfor (let schedevt of scheduler) {\n   // console.log(schedevt.tbegin);\n   // console.log(schedevt.tend);\n}\nflow.set(\"scheduler\", scheduler)\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 460,
+        "y": 300,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "418a466a55dad79d",
+        "type": "debug",
+        "z": "7307d663355c3b2c",
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 700,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "e4101b986ec0e30c",
+        "type": "inject",
+        "z": "7307d663355c3b2c",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 250,
+        "y": 400,
+        "wires": [
+            [
+                "8277538da073a4bf"
+            ]
+        ]
+    },
+    {
+        "id": "8277538da073a4bf",
+        "type": "function",
+        "z": "7307d663355c3b2c",
+        "name": "керування за розкладом",
+        "func": "// ця функцiя виводить повiдомлення щодо часу та керує подiями\n\nlet fnshed = function () {\n    let dt = new Date();\n   // let msgtxt = dt.toLocaleString();\n   // console.log(msgtxt);\n    for (let schedevt of scheduler) checkshed(schedevt);\n    for (let i = 0; i < scheduler.length; i++) {\n        if (dt.getTime() > scheduler[i].tend.getTime()) {\n           // console.log(scheduler[i].topic);\n            scheduler.splice(i, 1);\n        }\n    }\n    //if (scheduler.length === 0) clearTimeout(htmr);\n}\n\n// ця функцiя перевiряє чи подiю на початок та завершення, та виводить повiдомлення\n// при зупинцi та запуску події\nfunction checkshed(shedevt) {\n    let dt = new Date();\n   // let msg = {};\n    if (dt.getTime() >= shedevt.tend.getTime()) {\n        if (shedevt.started) {\n            shedevt.started = false;\n            msg.payload = shedevt.cmdend;\n            msg.topic = shedevt.topic;\n           // console.log(\"Подію для \" + msg.topic + \" зупинено \");\n        }\n    }\n    else if ((dt.getTime() >= shedevt.tbegin.getTime()) && (!shedevt.started)) {\n        msg.payload = shedevt.cmdbegin;\n        msg.topic = shedevt.topic;\n        shedevt.started = true;\n        //console.log(\"Подію для \" + msg.topic + \" запущено\");\n    }\n}\n//htmr = setInterval(fnshed, 1000);\n//console.log(now.toLocaleString() + \" Планувальник запущено\");\n\nlet scheduler = flow.get(\"scheduler\") || [];\nfnshed();\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 290,
+        "y": 460,
+        "wires": [
+            [
+                "418a466a55dad79d",
+                "34b0a9e289e5159d"
+            ]
+        ]
+    },
+    {
+        "id": "78c1a31f2c6a641e",
+        "type": "ui_button",
+        "z": "7307d663355c3b2c",
+        "name": "",
+        "group": "6604169f5c46c252",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "проба",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 250,
+        "y": 240,
+        "wires": [
+            [
+                "42c7911c5bc9cca2"
+            ]
+        ]
+    },
+    {
+        "id": "34b0a9e289e5159d",
+        "type": "switch",
+        "z": "7307d663355c3b2c",
+        "name": "",
+        "property": "topic",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "lamp1",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "lamp2",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "power",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 3,
+        "x": 310,
+        "y": 520,
+        "wires": [
+            [
+                "abd1b63408a25d9f"
+            ],
+            [
+                "42880770dfb4b32c"
+            ],
+            [
+                "706ed1152cfa06e5"
+            ]
+        ]
+    },
+    {
+        "id": "abd1b63408a25d9f",
+        "type": "ui_text",
+        "z": "7307d663355c3b2c",
+        "group": "6604169f5c46c252",
+        "order": 7,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "лампа 1",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 560,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "42880770dfb4b32c",
+        "type": "ui_text",
+        "z": "7307d663355c3b2c",
+        "group": "6604169f5c46c252",
+        "order": 8,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "лампа 2",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 560,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "706ed1152cfa06e5",
+        "type": "ui_gauge",
+        "z": "7307d663355c3b2c",
+        "name": "",
+        "group": "6604169f5c46c252",
+        "order": 9,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "потужнiсть",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "80",
+        "seg2": "90",
+        "diff": false,
+        "className": "",
+        "x": 590,
+        "y": 580,
+        "wires": []
     }
 ]
